@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TextInput, Button } from 'react-native';
 import Cores from '../constantes/Cores';
+import { useDispatch } from 'react-redux'
+
+import * as lugaresActions from '../store/lugares-actions';
 
 
 const NovoLugarTela = (props) => {
 
     const [novoLugar, setNovoLugar] = useState('');
 
+    const dispatch = useDispatch();
+
     const adicionarLugar = () => {
-        console.log("Adicionando...");
+        dispatch(lugaresActions.addLugar(novoLugar));
+        props.navigation.goBack();
     }
+
 
     return (
         <ScrollView>
