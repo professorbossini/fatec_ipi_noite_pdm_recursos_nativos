@@ -25,7 +25,7 @@ const ListaDeLugaresTela = (props) => {
                         () => props.navigation.navigate('DetalhesDoLugar',
                             { tituloLugar: lugar.item.titulo, idLugar: lugar.id })
                     }
-                    imagem={null}
+                    imagem={lugar.item.imagemURI}
                     endereco={'um endereco'}
                 />
 
